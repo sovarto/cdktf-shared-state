@@ -1,0 +1,27 @@
+{
+  "name": "@sovarto/cdktf-state",
+  "version": "0.0.4",
+  "description": "",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "ctix build --overwrite && tsc",
+    "bump-and-publish": "npm version patch --git-tag-version=false && npm run publish-package",
+    "publish-package": "node publish.js",
+    "prepublishOnly": "echo !!!!!!!! && echo Use `npm run publish-package`, not `npm publish` && echo !!!!!!!! && exit 1"
+  },
+  "author": "Sovarto GmbH",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@tsconfig/node21": "^21.0.1",
+    "@types/node": "^20.11.0",
+    "ctix": "^2.4.4",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.12",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.577.0",
+    "zod": "^3.23.8"
+  }
+}
