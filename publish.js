@@ -39,4 +39,4 @@ let packageJson = require('./package.json');
 delete packageJson.scripts.prepublishOnly;
 fs.writeFileSync('./dist/package.json', JSON.stringify(packageJson, null, 2));
 process.chdir('dist');
-execSync('npm publish', {stdio: 'inherit'});
+execSync('npm publish --access=public', {stdio: 'inherit'});
