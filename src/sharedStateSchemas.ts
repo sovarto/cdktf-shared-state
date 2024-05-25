@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const SshHostSchema = z.strictObject({
+export const SshHostSchema = z.strictObject({
     user: z.string(),
     name: z.string(),
     ipOrDns: z.string(),
@@ -42,3 +42,4 @@ export const MonitoringServicesSchema = z.object({
 export type MonitoringServicesSchema = z.infer<typeof MonitoringServicesSchema>
 export type InfrastructureServicesSchema = z.infer<typeof InfrastructureServicesSchema>
 export type BaseInfrastructureSchema = z.infer<typeof BaseInfrastructureSchema>
+export type SshHostSchema = z.infer<typeof SshHostSchema>
