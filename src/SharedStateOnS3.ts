@@ -23,6 +23,7 @@ export class SharedStateOnS3<T> extends Construct {
             bucket: options.bucketName,
             key: `${options.folder}/${options.sharedState.name}.json`,
             content,
+            contentType: 'application/json',
             etag: Fn.md5(content)
         })
     }
