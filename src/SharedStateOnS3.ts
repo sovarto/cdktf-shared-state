@@ -10,6 +10,7 @@ interface Options<T> {
         name: string;
         data: T;
     };
+    provider?: AwsProvider
 }
 
 export { Options as SharedStateOnS3Options };
@@ -24,7 +25,8 @@ export class SharedStateOnS3<T> extends Construct {
             key: `${options.folder}/${options.sharedState.name}.json`,
             content,
             contentType: 'application/json',
-            etag: Fn.md5(content)
+            etag: Fn.md5(content),
+            provider: options.provider
         })
     }
 }
